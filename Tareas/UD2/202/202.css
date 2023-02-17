@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+}
+.titulo {
+  padding: 2rem;
+  color: white;
+  background-color: rgba(72, 72, 72, 255);
+}
+
+.datosuser {
+  padding: 1rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+.preferenciasuser {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+.habitaciones {
+  margin-top: 1.5rem;
+}
+.habitaciones p {
+  margin-bottom: 0.25rem;
+}
+.habitaciones input {
+  margin-inline: 0.5rem;
+}
+.habitaciones input,
+.habitaciones label {
+  margin-left: 1rem;
+}
+.comidas {
+  margin-top: 1.5rem;
+}
+.comidas p {
+  margin-bottom: 0.25rem;
+}
+.comidas input {
+  margin-inline: 0.5rem;
+}
+.comidas input,
+.comidas label {
+  margin-left: 1rem;
+}
+
+#comentarios {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.botones {
+  margin-top: 1.5rem;
+
+  margin-left: 1rem;
+}
+.enviar {
+  border: none;
+  padding: 8px;
+
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #ffd27d;
+  cursor: pointer;
+}
+.enviar:active {
+  transform: translateY(4px);
+}
+.reset {
+  margin-left: 1rem;
+  padding: 8px;
+
+  text-decoration: none;
+  border-radius: 8px;
+
+  border: none;
+  cursor: pointer;
+  background-color: #f2595e;
+}
+.reset:active {
+  transform: translateY(4px);
+}

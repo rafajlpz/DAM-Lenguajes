@@ -1,0 +1,48 @@
+<!DOCTYPE tienda [
+
+<!-- Define los tipos de datos que se pueden utilizar en el DTD -->
+<!ENTITY % Texto "CDATA">
+<!ENTITY % IVA "(general|reducido|superreducido)">
+<!ENTITY % Divisa "(EUR|USD)">
+<!ENTITY % Descuento "CDATA">
+<!ENTITY % ID "ID">
+<!-- Define los elementos que pueden aparecer en la tienda -->
+<!ELEMENT tienda (productos, clientes?, ventas?)>
+<!-- Define que debe haber al menos un producto -->
+<!ELEMENT productos (producto+)>
+<!-- Define los atributos que pueden aparecer en el elemento producto -->
+<!ELEMENT producto (titulo, fabricante?, marca?, modelo, precio, stock, reacondicionado?)>
+<!ATTLIST producto idP %ID; #REQUIRED
+    ean %Texto; #IMPLIED
+    iva %IVA; #REQUIRED>
+<!-- Define que solo puede haber uno de los elementos fabricante o marca -->
+<!ELEMENT fabricante (#PCDATA)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT modelo (#PCDATA)>
+<!-- Define que el precio debe tener un atributo divisa obligatorio -->
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio divisa %Divisa; #REQUIRED
+    descuento %Descuento; "0">
+<!-- Define que el elemento reacondicionado debe ser vacío -->
+<!ELEMENT reacondicionado EMPTY>
+<!-- Define los atributos que pueden aparecer en el elemento cliente -->
+<!ELEMENT cliente ((nombre, apellidos?) | nombre-completo) , dni, telefono*, direccion?)>
+<!ATTLIST cliente idC %ID; #REQUIRED
+    creado %Texto; #IMPLIED>
+<!-- Define que un cliente solo puede tener uno de los elementos nombre y nombre-completo -->
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT nombre-completo (#PCDATA)>
+<!-- Define que un cliente puede tener uno o varios elementos telefono -->
+<!ELEMENT telefono (#PCDATA)>
+<!-- Define que un cliente puede tener o no tener un elemento direccion -->
+<!ELEMENT direccion (#PCDATA)>
+<!-- Define los elementos que pueden aparecer en la venta -->
+<!ELEMENT venta (item+)>
+<!ATTLIST venta fecha %Texto; #REQUIRED
+    cliente %ID; #REQUIRED>
+<!-- Define que cada item de una venta debe hacer referencia a un producto existente -->
+<!ELEMENT item EMPTY>
+<!ATTLIST item ref %ID; #REQUIRED
+    cantidad %Texto; "1">
+]>

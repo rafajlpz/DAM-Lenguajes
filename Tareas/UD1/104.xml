@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lmsgi tipo="obligatorio" horas_semanales="5">
+    <fecha_inicio dia="12" mes="9" anyo="2022"/>
+    <fecha_fin dia="21" mes="7" anyo="2023"/>
+    <matriculados>
+        <alumno>
+            <nombre>Ana</nombre>
+            <apellidos>Fernández Gutiérrez</apellidos>
+            <documento tipo="DNI">16965696L</documento>
+            <tlf tipo="movil">678201232</tlf>
+            <email>anafg@outlook.com</email>
+            <direccion>
+                <calle numero="22">Avenida Rosalía de Castro</calle>
+                <cp>15701</cp>
+                <ciudad provincia="A Corunya" c_autonoma="Galicia">Santiago de Compostela</ciudad>
+                <f_asistencia/>
+                <nota/>
+            </direccion>
+        </alumno>
+        <alumno>
+            <nombre>Pepe</nombre>
+            <apellidos>Martínez González</apellidos>
+            <documento tipo="DNI">98765432H</documento>
+            <tlf tipo="movil">691122334</tlf>
+            <email>pmg@gmail.com</email>
+            <direccion>
+                <calle numero="55">Rúa de Barcelona</calle>
+                <cp>15701</cp>
+                <ciudad provincia="Pontevedra" c_autonoma="Galicia">Vigo</ciudad>
+                <f_asistencia/>
+                <nota>APTO</nota>
+            </direccion>
+        </alumno>
+    </matriculados>
+</lmsgi>

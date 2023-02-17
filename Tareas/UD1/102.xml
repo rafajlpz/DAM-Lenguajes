@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda>
+    <contacto>
+        <nombre>Rafael</nombre>
+        <apellidos>Idrogo Lopez</apellidos>
+        <direccion>Rua Berna 12-B</direccion>
+        <telefono tipo="movil">648706727</telefono>
+        <telefono tipo="fijo">981586473</telefono>
+    </contacto>
+    <contacto>
+        <nombre>Valeria</nombre>
+        <apellidos>Cordova Lopez</apellidos>
+        <direccion>Rua Bruxelas 2A</direccion>
+        <telefono tipo="movil">654901381</telefono>
+        <telefono tipo="fijo">981664499</telefono>
+        <telefono tipo="laboral">663987656</telefono>
+    </contacto>
+    <contacto>
+        <nombre>Francisco Javier</nombre>
+        <apellidos>Perez Sanchez</apellidos>
+        <direccion>Rosalia de Castro 10</direccion>
+        <telefono tipo="movil">601987682</telefono>
+    </contacto>
+</agenda>

@@ -1,0 +1,19 @@
+<!-- Definición del documento raíz y sus atributos -->
+<!ELEMENT torneo (participante+)>
+<!ATTLIST torneo
+    edicion CDATA #REQUIRED
+    anteriorGanador CDATA #REQUIRED>
+
+<!-- Definición del elemento participante y sus atributos -->
+<!ELEMENT participante (nombre, edad, pais, cabezaDeSerie?)>
+<!ATTLIST participante
+    idP ID #REQUIRED
+    pareja IDREF #REQUIRED>
+
+<!-- Definición de los elementos nombre, edad y pais -->
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+
+<!-- Definición del elemento cabezaDeSerie como opcional -->
+<!ELEMENT cabezaDeSerie EMPTY>

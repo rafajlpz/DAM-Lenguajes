@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="202.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="titulo">Registro reserva de hotel</h1>
+      <form action="#" name="myForm" class="myform">
+        <div class="datosuser">
+          <fieldset class="field">
+            <legend>Datos del usuario</legend>
+            <label for="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Introduce el nombre"
+            />
+            <label for="surname">Apellidos</label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              placeholder="Introduce los apellidos"
+            />
+            <label for="tel">Tlf</label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="Introduce telefono"
+            />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ejemplo@ejemplo.com"
+            />
+            <label for="noches">Nº noches</label>
+            <input
+              type="number"
+              id="noches"
+              min="1"
+              max="20"
+              placeholder="Selecciona un numero"
+            />
+          </fieldset>
+        </div>
+
+        <div class="preferenciasuser">
+          <div class="fechahotel">
+            <label for="fecha"
+              >Fecha de entrada <input type="date" id="fecha" name="fecha"
+            /></label>
+            <label for="fecha2"
+              >Fecha de salida <input type="date" id="fecha2" name="fecha"
+            /></label>
+          </div>
+
+          <div class="servicios">
+            <div class="habitaciones">
+              <p>Tipo de habitacion</p>
+              <label><input type="radio" name="cama" checked />Simple</label>
+              <label><input type="radio" name="cama" />Doble</label>
+              <label><input type="radio" name="cama" />Matrimonial</label>
+              <br />
+              <label><input type="checkbox" />Cama supletoria</label>
+            </div>
+            <div class="comidas">
+              <p>Solicitar</p>
+              <label for="desayuno"
+                ><input id="desayuno" type="checkbox" />Desayuno</label
+              >
+              <label for="comida"
+                ><input id="comida" type="checkbox" />Comida</label
+              >
+              <label for="cena"><input id="cena" type="checkbox" />Cena</label>
+            </div>
+          </div>
+        </div>
+        <textarea
+          name="comentarios"
+          id="comentarios"
+          cols="50"
+          rows="10"
+          placeholder="Comentarios..."
+        ></textarea>
+        <br />
+        <div class="botones">
+          <input class="enviar" type="submit" value="Enviar" />
+          <input class="reset" type="reset" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

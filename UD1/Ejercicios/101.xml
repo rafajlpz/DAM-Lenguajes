@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria>
+    <libro categoria="fantasia" tipo="especial">
+        <titulo idioma ="castellano">Lord of the rigns</titulo>
+        <autor>J.R.R Tolkien</autor>
+        <fecha>29/07/1954</fecha>
+        <precio>20 Eur</precio>
+    </libro>
+
+    <libro categoria="Biografia">
+        <titulo idioma ="ingles">Alejandro Magno</titulo>
+        <autor>Mario Pombo</autor>
+        <fecha>09/01/1984</fecha>
+        <precio>15 Eur</precio>
+    </libro>
+   
+</libreria>

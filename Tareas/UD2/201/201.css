@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(214, 182, 123);
+}
+.container {
+  border: 1px solid black;
+  display: flex;
+}
+.container-receta {
+  padding: 1rem;
+}
+
+.titulo {
+  padding: 1rem;
+}
+.titulo-ingrediente {
+  margin: 0.75rem;
+  text-decoration: underline;
+}
+.ingredientes {
+  font-size: large;
+}
+.ingredientes li {
+  margin: 0.35rem;
+}
+.hr {
+  margin: 1.5rem;
+}
+.titulo-proceso {
+  margin: 0.75rem;
+  text-decoration: underline;
+}
+.proceso {
+  font-size: larger;
+}
+.proceso li {
+  margin: 0.35rem;
+}
+.img1 {
+  width: 600px;
+  border: 2px solid orange;
+  border-radius: 8%;
+}
+.img2 {
+  width: 500px;
+  border: 2px solid orange;
+  border-radius: 8%;
+}
