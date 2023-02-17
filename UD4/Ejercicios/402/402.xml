@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "402.dtd">
+<biblioteca>
+    <libro>
+        <autor>Miguel de Cervantes Saavedra</autor>
+        <titulo>El Quijote de la Mancha</titulo>
+    </libro>
+    <libro>
+        <autor>Pablo Neruda</autor>
+        <titulo>Veinte poemas de amor y una canción desesperada</titulo>
+    </libro>
+</biblioteca>
