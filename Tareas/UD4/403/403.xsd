@@ -1,0 +1,63 @@
+<!-- Declaracion xsd -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Elemento raiz -->
+    <xs:element name="impresoras">
+        <!-- Es un elemento complejo (elementos y atributos) -->
+        <xs:complexType>
+            <!-- Secuencia para que aparezca en orden -->
+            <xs:sequence>
+                <!-- Aparece minimo 1 vez y maximo ilimitado -->
+                <xs:element name="impresora" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <!-- Secuencia para que aparezca en orden -->
+                        <xs:sequence>
+                            <xs:element name="fabricante" type="xs:string" />
+                            <xs:element name="modelo" type="xs:string" />
+                            <xs:element name="peso">
+                                <!-- Es un tipo de dato simple, con restricciones -->
+                                <xs:simpleType>
+                                    <!-- Restriccion de tipo decimal -->
+                                    <xs:restriction base="xs:decimal">
+                                        <xs:minInclusive value="0" />
+                                        <xs:fractionDigits value="2" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- Elemento tipo string, numero de apariciones ilimitado -->
+                            <xs:element name="tamaño" type="xs:string" maxOccurs="unbounded" />
+                            <xs:element name="cartucho">
+                                <!-- Es un tipo de dato simple, con restricciones -->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <!-- Pattern, usando expresiones regulares para obtener el
+                                        resultado -->
+                                        <xs:pattern value="C-[0-9]{3}[A-Z]{1,2}" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- Puede no aparecer (minOccurs = 0) -->
+                            <xs:element name="enred" minOccurs="0" />
+                        </xs:sequence>
+                        <!-- Atributos -->
+                        <xs:attribute name="numSerie" type="xs:ID" use="required" />
+                        <xs:attribute name="tecnologia" use="required">
+                            <!-- Atributo de un elemento de tipo simple -->
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <!-- Restricciones, enumeracion de valores validos de un
+                                    atributo -->
+                                    <xs:enumeration value="matricial" />
+                                    <xs:enumeration value="láser" />
+                                    <xs:enumeration value="tinta" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <!-- Atributo compra, entero positivo y opcional -->
+                        <xs:attribute name="compra"
+                            type="xs:positiveInteger" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

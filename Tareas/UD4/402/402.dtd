@@ -1,48 +1,56 @@
-<!DOCTYPE tienda [
-
-<!-- Define los tipos de datos que se pueden utilizar en el DTD -->
-<!ENTITY % Texto "CDATA">
-<!ENTITY % IVA "(general|reducido|superreducido)">
-<!ENTITY % Divisa "(EUR|USD)">
-<!ENTITY % Descuento "CDATA">
-<!ENTITY % ID "ID">
-<!-- Define los elementos que pueden aparecer en la tienda -->
-<!ELEMENT tienda (productos, clientes?, ventas?)>
-<!-- Define que debe haber al menos un producto -->
+<!-- Designamos el elemento raiz y lo que contiene -->
+<!ELEMENT tienda (productos,clientes?,ventas?)>
+<!-- Designamos el elemento productos, que contiene uno o varios producto -->
 <!ELEMENT productos (producto+)>
-<!-- Define los atributos que pueden aparecer en el elemento producto -->
-<!ELEMENT producto (titulo, fabricante?, marca?, modelo, precio, stock, reacondicionado?)>
-<!ATTLIST producto idP %ID; #REQUIRED
-    ean %Texto; #IMPLIED
-    iva %IVA; #REQUIRED>
-<!-- Define que solo puede haber uno de los elementos fabricante o marca -->
+<!-- Designamos el elemento producto y los elementos que contiene -->
+<!ELEMENT producto (titulo, (fabricante?|marca?), modelo, precio, stock, reacondicionado?)>
+<!-- Atributos de producto -->
+<!ATTLIST producto idP ID #REQUIRED>
+<!ATTLIST producto ean CDATA #IMPLIED>
+<!ATTLIST producto iva (general|reducido|superreducido) #IMPLIED>
+<!-- Elementos de producto -->
+<!ELEMENT titulo (#PCDATA)>
 <!ELEMENT fabricante (#PCDATA)>
-<!ELEMENT marca (#PCDATA)>
 <!ELEMENT modelo (#PCDATA)>
-<!-- Define que el precio debe tener un atributo divisa obligatorio -->
 <!ELEMENT precio (#PCDATA)>
-<!ATTLIST precio divisa %Divisa; #REQUIRED
-    descuento %Descuento; "0">
-<!-- Define que el elemento reacondicionado debe ser vacío -->
+<!-- Atributos de precio -->
+<!ATTLIST precio divisa (EUR|USD) #REQUIRED>
+<!ATTLIST precio descuento CDATA #IMPLIED>
+<!-- Elementos de producto -->
+<!ELEMENT stock (#PCDATA)>
 <!ELEMENT reacondicionado EMPTY>
-<!-- Define los atributos que pueden aparecer en el elemento cliente -->
-<!ELEMENT cliente ((nombre, apellidos?) | nombre-completo) , dni, telefono*, direccion?)>
-<!ATTLIST cliente idC %ID; #REQUIRED
-    creado %Texto; #IMPLIED>
-<!-- Define que un cliente solo puede tener uno de los elementos nombre y nombre-completo -->
+<!ELEMENT marca (#PCDATA)>
+
+
+<!-- Designamos el elemento clientes, que contiene uno, ninguno o varios clientes -->
+<!ELEMENT clientes (cliente*)>
+<!-- Designamos el elemento cliente y los elementos que contiene -->
+<!ELEMENT cliente (((nombre, apellidos) | nombre-completo), dni, telefono*, direccion?)>
+<!-- Atributos de cliente -->
+<!ATTLIST cliente idC ID #REQUIRED>
+<!ATTLIST cliente creado CDATA #REQUIRED>
+<!-- Elementos de cliente -->
 <!ELEMENT nombre (#PCDATA)>
-<!ELEMENT apellidos (#PCDATA)>
 <!ELEMENT nombre-completo (#PCDATA)>
-<!-- Define que un cliente puede tener uno o varios elementos telefono -->
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT dni (#PCDATA)>
 <!ELEMENT telefono (#PCDATA)>
-<!-- Define que un cliente puede tener o no tener un elemento direccion -->
 <!ELEMENT direccion (#PCDATA)>
-<!-- Define los elementos que pueden aparecer en la venta -->
-<!ELEMENT venta (item+)>
-<!ATTLIST venta fecha %Texto; #REQUIRED
-    cliente %ID; #REQUIRED>
-<!-- Define que cada item de una venta debe hacer referencia a un producto existente -->
-<!ELEMENT item EMPTY>
-<!ATTLIST item ref %ID; #REQUIRED
-    cantidad %Texto; "1">
-]>
+
+
+<!-- Designamos el elemento ventas, que contiene uno, ninguna o varias ventas -->
+<!ELEMENT ventas (venta*)>
+<!-- Designamos el elemento venta y los elementos que contiene -->
+<!ELEMENT venta (item+, total?)>
+<!-- Atributos de venta -->
+<!ATTLIST venta fecha CDATA #REQUIRED>
+<!ATTLIST venta cliente CDATA #REQUIRED>
+<!-- Elemento de cliente -->
+<!ELEMENT item (#PCDATA)>
+<!-- Atributos de item -->
+<!ATTLIST item ref IDREF #REQUIRED>
+<!ATTLIST item cantidad CDATA "1">
+<!-- Elemento de cliente -->
+<!ELEMENT total (#PCDATA)>
+<!-- Atributos de total -->
+<!ATTLIST total divisa CDATA #REQUIRED>
