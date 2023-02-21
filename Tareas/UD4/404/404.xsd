@@ -1,0 +1,116 @@
+<!-- Declaracion XSD -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Elemento raiz -->
+    <xs:element name="tienda">
+        <!-- Tipo de dato complejo al tener varios elementos -->
+        <xs:complexType>
+            <!-- Secuencia del orden productos, clientes, ventas -->
+            <xs:sequence>
+                <!-- Elemento productos -->
+                <xs:element name="productos" minOccurs="1" maxOccurs="unbounded">
+                    <!-- Tipo de dato complejo al tener varios elementos y atributos -->
+                    <xs:complexType>
+                        <!-- Secuencia del orden producto -->
+                        <xs:sequence>
+                            <!-- Elemento producto -->
+                            <xs:element name="producto" minOccurs="1" maxOccurs="unbounded">
+                                <!-- Tipo de dato complejo al tener varios elementos y atributos -->
+                                <xs:complexType>
+                                    <!-- Secuencia del orden de elementos -->
+                                    <xs:sequence>
+                                        <xs:element name="titulo" type="xs:string"></xs:element>
+                                        <xs:element name="fabricante" type="xs:string"></xs:element>
+                                        <xs:element name="modelo" type="xs:string"></xs:element>
+                                        <xs:element name="precio">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:decimal">
+                                                        <xs:attribute name="divisa" type="xs:string"
+                                                            use="required" />
+                                                        <xs:attribute name="descuento"
+                                                            type="xs:decimal" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                            <!--  -->
+
+                                        </xs:element>
+                                        <xs:element name="stock" type="xs:positiveInteger"></xs:element>
+                                        <xs:element name="reacondicionado" minOccurs="0" />
+                                    </xs:sequence>
+                                    <xs:attribute name="idP" type="xs:string" use="required" />
+                                    <xs:attribute name="ean" type="xs:string" />
+                                    <xs:attribute name="iva" type="xs:decimal" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="clientes" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="cliente" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"></xs:element>
+                                        <xs:element name="apellidos" type="xs:string"></xs:element>
+                                        <xs:element name="dni"></xs:element>
+                                        <xs:element name="telefono" minOccurs="0"
+                                            maxOccurs="unbounded">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="\+\d{2} \d{9}" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="direccion" type="xs:string" minOccurs="0" />
+                                    </xs:sequence>
+                                    <xs:attribute name="idC" type="xs:string" use="required" />
+                                    <xs:attribute name="creado" type="xs:date" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ventas">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="venta" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="item" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="ref" type="xs:string"
+                                                    use="required" />
+                                                <xs:attribute name="cantidad"
+                                                    type="xs:positiveInteger" use="optional" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="total">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:decimal">
+                                                        <xs:attribute name="divisa" type="xs:string"
+                                                            use="required" />
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="fecha" type="xs:date" use="required" />
+                                    <xs:attribute name="hora" type="xs:time" use="required" />
+                                    <xs:attribute name="cliente" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+
+            </xs:sequence>
+
+
+        </xs:complexType>
+
+    </xs:element>
+</xs:schema>

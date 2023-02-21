@@ -1,0 +1,136 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!-- Declaración de tipos complejos -->
+  <xs:complexType name="productoType">
+    <xs:sequence>
+      <xs:element name="titulo" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="fabricante" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="modelo" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="precio" type="precioType" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="stock" type="xs:positiveInteger" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="reacondicionado" type="xs:string" maxOccurs="1" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="idP" type="xs:string" use="required"/>
+    <xs:attribute name="ean" type="eanType" use="optional"/>
+    <xs:attribute name="iva" type="ivaType" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="clienteType">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="apellidos" type="xs:string" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="dni" type="dniType" maxOccurs="1" minOccurs="1"/>
+      <xs:element name="telefono" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="direccion" type="xs:string" maxOccurs="1" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="idC" type="xs:string" use="required"/>
+    <xs:attribute name="creado" type="xs:date" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="itemType">
+    <xs:attribute name="ref" type="xs:string" use="required"/>
+    <xs:attribute name="cantidad" type="xs:positiveInteger" default="1" use="optional"/>
+  </xs:complexType>
+  
+  <xs:complexType name="ventaType">
+    <xs:sequence>
+      <xs:element name="item" type="itemType" maxOccurs="unbounded" minOccurs="1"/>
+      <xs:element name="total" type="precioType" maxOccurs="1" minOccurs="1"/>
+    </xs:sequence>
+    <xs:attribute name="fecha" type="xs:date" use="required"/>
+    <xs:attribute name="hora" type="xs:time" use="required"/>
+    <xs:attribute name="cliente" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="productosType">
+    <xs:sequence>
+      <xs:element name="producto" type="productoType" maxOccurs="unbounded" minOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="clientesType">
+    <xs:sequence>
+      <xs:element name="cliente" type="clienteType" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ventasType"
+  </xs:complexType>
+
+  <!--  -->
+
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tienda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="productos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="producto" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="titulo" type="xs:string"/>
+                    <xs:element name="fabricante" type="xs:string"/>
+                    <xs:element name="modelo" type="xs:string"/>
+                    <xs:element name="precio">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:decimal">
+                            <xs:attribute name="divisa" type="xs:string" use="required"/>
+                            <xs:attribute name="descuento" type="xs:decimal"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="stock" type="xs:integer"/>
+                    <xs:element name="reacondicionado" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute name="idP" type="xs:string" use="required"/>
+                  <xs:attribute name="ean" type="xs:string"/>
+                  <xs:attribute name="iva" type="xs:decimal" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="clientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cliente" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="apellidos" type="xs:string"/>
+                    <xs:element name="dni" type="xs:string"/>
+                    <xs:element name="telefono" type="xs:string" maxOccurs="unbounded"/>
+                    <xs:element name="direccion" type="xs:string"/>
+                  </xs:sequence>
+                  <xs:attribute name="idC" type="xs:string" use="required"/>
+                  <xs:attribute name="creado" type="xs:date"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ventas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="venta" maxOccurs="unbounded">
+                <>
+                  <xs:sequence>
+                    <xs:element name="item" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="ref" type="xs:string" use="required"/>
+                        <xs:attribute name="cantidad" type="xs:integer"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="total">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:decimal">
+                            <xs:attribute name="divisa" type="xs:string" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence

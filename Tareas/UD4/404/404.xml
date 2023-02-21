@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tienda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="404.xsd">
+    <productos>
+        <producto idP="P1" ean="5397063521906" iva="21">
+            <titulo>Portátil Dell XPS 15</titulo>
+            <fabricante>Dell</fabricante>
+            <modelo>XPS 15</modelo>
+            <precio divisa="EUR">1000.00</precio>
+            <stock>20</stock>
+            <reacondicionado />
+        </producto>
+        <producto idP="P2" iva="21">
+            <titulo>Tablet Samsung Galaxy Tab S7</titulo>
+            <fabricante>Samsung</fabricante>
+            <modelo>Galaxy Tab S7</modelo>
+            <precio divisa="EUR">700.00</precio>
+            <stock>15</stock>
+        </producto>
+        <producto idP="P3" ean="0889894812605" iva="21">
+            <titulo>Impresora HP OfficeJet Pro 7740</titulo>
+            <fabricante>HP</fabricante>
+            <modelo>OfficeJet Pro 7740</modelo>
+            <precio divisa="USD" descuento="10">150.00</precio>
+            <stock>10</stock>
+        </producto>
+    </productos>
+    <clientes>
+        <cliente idC="C1" creado="2022-12-25">
+            <nombre>Antonio</nombre>
+            <apellidos>Pérez Martínez</apellidos>
+            <dni>12345678A</dni>
+            <telefono>+34 666555444</telefono>
+            <direccion>Avenida de Romero Donallo, 13</direccion>
+        </cliente>
+        <cliente idC="C2" creado="2022-12-12">
+            <nombre>María</nombre>
+            <apellidos>García Pérez</apellidos>
+            <dni>87654321B</dni>
+            <telefono>+34 755444333</telefono>
+            <telefono>+34 655444333</telefono>
+            <direccion>Calle Santiago de Chile, 45</direccion>
+        </cliente>
+        <cliente idC="C3" creado="2022-01-03">
+            <nombre>Mario</nombre>
+            <apellidos>Martínez López</apellidos>
+            <dni>38343578A</dni>
+        </cliente>
+    </clientes>
+    <ventas>
+        <venta fecha="2023-01-09" hora="18:01:25" cliente="C2">
+            <item ref="P3" cantidad="8" />
+            <item ref="P2" />
+            <total divisa="EUR">1900.00</total>
+        </venta>
+        <venta fecha="2023-01-21" hora="09:54:07" cliente="C1">
+            <item ref="P1" />
+            <item ref="P2" />
+            <total divisa="EUR">1700.00</total>
+        </venta>
+    </ventas>
+</tienda>
