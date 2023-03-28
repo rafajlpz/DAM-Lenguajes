@@ -1,0 +1,15 @@
+1. Extraer todos los elementos <producto>.
+/productos/producto
+
+2. Extraer todos los elementos <talla> del producto con nombre Camiseta.
+/productos/producto[nombre='Camiseta']/tallas/talla
+
+3. Precio del producto con nombre Zapatos.
+/productos/producto[nombre='Zapatos']/precio/text()
+
+4. Todos los elementos <nombre> de los productos cuyo precio es mayor o igual a 15.
+/productos/producto[precio >= 15]/nombre
+
+5. Todos los elementos <talla> de todos los productos.
+//talla
+/productos/producto/tallas/talla
