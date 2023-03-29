@@ -11,5 +11,39 @@
 /productos/producto[precio >= 15]/nombre
 
 5. Todos los elementos <talla> de todos los productos.
-//talla
 /productos/producto/tallas/talla
+//talla
+
+6. El nombre del producto con el precio más alto.
+/productos/producto[precio = max(/productos/producto/precio)]/nombre/text()
+
+7. El precio promedio de todos los productos.
+avg(/productos/producto/precio)
+
+8. Todos los nombres de los productos cuyo nombre comienza por P.
+/productos/producto[starts-with(nombre, 'P')]/nombre/text()
+
+9. Todos los elementos <nombre> de los productos cuya descripción contiene la palabra deportiva.
+/productos/producto[contains(descripcion, 'deportiva')]/nombre
+
+10. Todos los elementos <talla> de los productos con precio menor a 20.
+/productos/producto[precio < 20]/tallas/talla
+
+
+11. Todos los elementos <producto> que tengan el atributo categoria igual a ropa.
+/productos/producto[@categoria = "ropa"]
+
+12. El precio del producto con nombre Gorra en dólares (USD).
+/productos/producto[nombre = "Gorra"]/precio[@divisa = "USD"]/text()
+
+13. El nombre de los productos cuyo precio esté en euros (EUR).
+/productos/producto[contains(precio/@divisa, "EUR")]/nombre/text()
+
+14. Todas las tallas de los productos con precio mayor a 20 dólares (USD).
+/productos/producto[precio/@divisa = "USD" and precio > 20]/tallas/talla/text()
+
+15. El nombre y la descripción de los productos con precio en dólares (USD).
+//producto[precio/@divisa='USD']/*[self::nombre or self::descripcion]
+
+/productos/producto/precio[@divisa='USD']/preceding-sibling::nombre | /productos/producto/precio[@divisa='USD']/following-sibling::descripcion
+

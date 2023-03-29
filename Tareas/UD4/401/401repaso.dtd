@@ -1,15 +1,13 @@
-<!-- Declaramos torneo, elemento raiz y lo que contiene -->
+
 <!ELEMENT torneo (participante+)>
-<!-- Atributos de torneo -->
 <!ATTLIST torneo edicion CDATA #REQUIRED>
 <!ATTLIST torneo anteriorGanador CDATA #REQUIRED>
 
-<!-- Declaramos el elemento participante y lo que contiene -->
 <!ELEMENT participante (nombre, edad, pais, cabezaDeSerie?)>
-<!-- Atributos de participante -->
 <!ATTLIST participante idP ID #REQUIRED>
 <!ATTLIST participante pareja IDREF #REQUIRED>
-<!-- Declaramos los elementos que pertenecen a participante -->
+
+
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT edad (#PCDATA)>
 <!ELEMENT pais (#PCDATA)>

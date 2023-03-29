@@ -33,11 +33,11 @@
                                                 </xs:simpleContent>
                                             </xs:complexType>
                                             <!--  -->
-
                                         </xs:element>
                                         <xs:element name="stock" type="xs:positiveInteger"></xs:element>
                                         <xs:element name="reacondicionado" minOccurs="0" />
                                     </xs:sequence>
+                                    <!-- Atributos -->
                                     <xs:attribute name="idP" type="xs:string" use="required" />
                                     <xs:attribute name="ean" type="xs:string" />
                                     <xs:attribute name="iva" type="xs:decimal" use="required" />
@@ -46,9 +46,11 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <!-- Elemento clientes -->
                 <xs:element name="clientes" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
+                <!-- Elemento cliente -->
                             <xs:element name="cliente" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -65,6 +67,7 @@
                                         </xs:element>
                                         <xs:element name="direccion" type="xs:string" minOccurs="0" />
                                     </xs:sequence>
+                                    <!-- Atributos -->
                                     <xs:attribute name="idC" type="xs:string" use="required" />
                                     <xs:attribute name="creado" type="xs:date" />
                                 </xs:complexType>
@@ -72,9 +75,11 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <!-- Elemento ventas -->
                 <xs:element name="ventas">
                     <xs:complexType>
                         <xs:sequence>
+                            <!-- Elemento venta -->
                             <xs:element name="venta" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
@@ -97,6 +102,7 @@
                                             </xs:complexType>
                                         </xs:element>
                                     </xs:sequence>
+                                    <!-- Atributos -->
                                     <xs:attribute name="fecha" type="xs:date" use="required" />
                                     <xs:attribute name="hora" type="xs:time" use="required" />
                                     <xs:attribute name="cliente" type="xs:string" use="required" />
@@ -105,12 +111,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
-
             </xs:sequence>
-
-
         </xs:complexType>
-
     </xs:element>
 </xs:schema>

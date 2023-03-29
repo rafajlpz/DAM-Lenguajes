@@ -1,5 +1,5 @@
 <!-- Designamos el elemento raiz y lo que contiene -->
-<!ELEMENT tienda (productos,clientes,ventas)>
+<!ELEMENT tienda (productos, clientes, ventas)>
 <!-- Designamos el elemento productos, que contiene uno o varios producto -->
 <!ELEMENT productos (producto+)>
 <!-- Designamos el elemento producto y los elementos que contiene -->
@@ -18,9 +18,8 @@
 <!ATTLIST precio descuento CDATA "0">
 <!-- Elementos de producto -->
 <!ELEMENT stock (#PCDATA)>
-<!ELEMENT reacondicionado EMPTY>
 <!ELEMENT marca (#PCDATA)>
-
+<!ELEMENT reacondicionado EMPTY>
 
 <!-- Designamos el elemento clientes, que contiene uno, ninguno o varios clientes -->
 <!ELEMENT clientes (cliente*)>
@@ -31,8 +30,8 @@
 <!ATTLIST cliente creado CDATA #REQUIRED>
 <!-- Elementos de cliente -->
 <!ELEMENT nombre (#PCDATA)>
-<!ELEMENT nombre-completo (#PCDATA)>
 <!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT nombre-completo (#PCDATA)>
 <!ELEMENT dni (#PCDATA)>
 <!ELEMENT telefono (#PCDATA)>
 <!ELEMENT direccion (#PCDATA)>
