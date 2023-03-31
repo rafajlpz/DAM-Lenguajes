@@ -22,24 +22,24 @@
                         <xsl:sort select="nacimiento" order="ascending" />
                             <tr>
                             <td>
-                                <xsl:value-of select="@id"></xsl:value-of>
+                                <xsl:value-of select="@id" />
                             </td>
                             <td>
-                                <xsl:value-of select="nombre"></xsl:value-of>
+                                <xsl:value-of select="nombre" />
                             </td>
                             <td>
-                                <xsl:value-of select="nacimiento"></xsl:value-of>
+                                <xsl:value-of select="nacimiento" />
                             </td>
                             <td>
                                 <xsl:choose>
                                     <xsl:when test="fallecimiento">
-                                        <xsl:value-of select="fallecimiento"></xsl:value-of>
+                                        <xsl:value-of select="fallecimiento" />
                                     </xsl:when>
                                     <xsl:otherwise>Desconocido</xsl:otherwise>
                                 </xsl:choose>
                             </td>
                             <td>
-                                <xsl:value-of select="pais"></xsl:value-of>
+                                <xsl:value-of select="pais" />
                             </td>
                             <td>
                                 <a href="{@wikipedia}" target="_blank">
