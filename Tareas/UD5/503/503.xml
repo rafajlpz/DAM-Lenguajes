@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="503.xsl" type="text/xsl"?>
+<artistas>
+    <artista id="a101" wikipedia="https://es.wikipedia.org/wiki/Diego_Vel%C3%A1zquez">
+        <nombre>Diego Velázquez</nombre>
+        <nacimiento>1599</nacimiento>
+        <fallecimiento>1660</fallecimiento>
+        <pais>España</pais>
+    </artista>
+    <artista id="a102" wikipedia="https://es.wikipedia.org/wiki/Caravaggio">
+        <nombre>Michelangelo Caravaggio</nombre>
+        <nacimiento>1571</nacimiento>
+        <pais>Italia</pais>
+    </artista>
+    <artista id="a103" wikipedia="https://es.wikipedia.org/wiki/Herrada_de_Landsberg">
+        <nombre>Herrada de Landsberg</nombre>
+        <nacimiento>1125</nacimiento>
+        <fallecimiento>1195</fallecimiento>
+        <pais>Alsacia</pais>
+    </artista>
+    <artista id="a104" wikipedia="https://es.wikipedia.org/wiki/Francisco_de_Goya">
+        <nombre>Francisco de Goya</nombre>
+        <nacimiento>1746</nacimiento>
+        <fallecimiento>1828</fallecimiento>
+        <pais>España</pais>
+    </artista>
+</artistas>
