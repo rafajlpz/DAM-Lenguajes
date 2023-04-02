@@ -1,0 +1,58 @@
+<tienda>
+    <productos>
+        <producto id="p001" precio="899.99">Smartphone Samsung Galaxy S21</producto>
+        <producto id="p002" precio="799.99">Portátil HP Pavilion 15-cs3002ns</producto>
+        <producto id="p003" precio="1399.99">Bicicleta de montaña Scott Scale 980</producto>
+        <producto id="p004" precio="1499.99">Smart TV LG OLED55CX6LA</producto>
+        <producto id="p005" precio="279.99">Auriculares inalámbricos Sony WF-1000XM4</producto>
+        <producto id="p006" precio="21.99">Libro "El nombre del viento" de Patrick Rothfuss</producto>
+        <producto id="p007" precio="34.99">Juego de mesa Catan</producto>
+        <producto id="p008" precio="109.99">Zapatillas deportivas Nike Air Zoom Pegasus 38</producto>
+        <producto id="p009" precio="1399.99">Cámara réflex Canon EOS 90D</producto>
+        <producto id="p010" precio="199.99">Robot de cocina Moulinex Cookeo</producto>
+    </productos>
+    <ofertas>
+        <producto id="p002" precio="799.99">Portátil HP Pavilion 15-cs3002ns</producto>
+        <producto id="p004" precio="1499.99">Smart TV LG OLED55CX6LA</producto>
+        <producto id="p008" precio="109.99">Zapatillas deportivas Nike Air Zoom Pegasus 38</producto>
+    </ofertas>
+    <ventas>
+        <venta fecha="2022-01-01" id="v001" cantidad="3">
+            <producto precio="899.99" categoria="Electrónica">Smartphone Samsung Galaxy S21</producto>
+            <producto precio="799.99" categoria="Informática">Portátil HP Pavilion 15-cs3002ns</producto>
+            <producto precio="21.99" categoria="Libros">Libro "El nombre del viento" de Patrick
+                Rothfuss</producto>
+        </venta>
+        <venta fecha="2022-02-14" id="v002" cantidad="2">
+            <producto precio="279.99" categoria="Electrónica">Auriculares inalámbricos Sony
+                WF-1000XM4</producto>
+            <producto precio="34.99" categoria="Juegos">Juego de mesa Catan</producto>
+        </venta>
+        <venta fecha="2022-03-25" id="v003" cantidad="2">
+            <producto precio="1399.99" categoria="Deporte">Bicicleta de montaña Scott Scale 980</producto>
+            <producto precio="109.99" categoria="Deporte">Zapatillas deportivas Nike Air Zoom
+                Pegasus 38</producto>
+        </venta>
+        <venta fecha="2022-05-02" id="v004" cantidad="2">
+            <producto precio="1499.99" categoria="Electrónica">Smart TV LG OLED55CX6LA</producto>
+            <producto precio="1399.99" categoria="Fotografía">Cámara réflex Canon EOS 90D</producto>
+        </venta>
+        <venta fecha="2022-06-15" id="v005" cantidad="1">
+            <producto precio="199.99" categoria="Hogar">Robot de cocina Moulinex Cookeo</producto>
+        </venta>
+        <venta fecha="2022-08-01" id="v006" cantidad="3">
+            <producto precio="279.99" categoria="Electrónica">Auriculares inalámbricos Sony
+                WF-1000XM4</producto>
+            <producto precio="109.99" categoria="Deporte">Zapatillas deportivas Nike Air Zoom
+                Pegasus 38</producto>
+            <producto precio="1399.99" categoria="Fotografía">Cámara réflex Canon EOS 90D</producto>
+        </venta>
+        <venta fecha="2022-10-10" id="v007" cantidad="4">
+            <producto precio="1399.99" categoria="Deporte">Bicicleta de montaña Scott Scale 980</producto>
+            <producto precio="21.99" categoria="Libros">Libro "El nombre del viento" de Patrick
+                Rothfuss</producto>
+            <producto precio="34.99" categoria="Juegos">Juego de mesa Catan</producto>
+            <producto precio="199.99" categoria="Hogar">Robot de cocina Moulinex Cookeo</producto>
+        </venta>
+    </ventas>
+</tienda>
