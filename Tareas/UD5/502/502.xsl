@@ -5,7 +5,7 @@
     <!-- Empieza a procesar a partir del elemento raiz que seria tienda -->
     <xsl:template match="/">
         <!-- Productos -->
-            <productos>
+        <productos>
             <xsl:for-each select="tienda/productos/producto">
                 <producto id="{@id}" precio="{@precio}">
                     <xsl:value-of select="nombre/text()" />
@@ -13,16 +13,16 @@
             </xsl:for-each>
         </productos>
         <!-- Ofertas -->
-            <ofertas>
+        <ofertas>
             <xsl:for-each select="tienda/productos/producto[@descuento]"> </xsl:for-each>
         </ofertas>
         <!-- Ventas -->
-            <ventas>
-            <xsl:for-each select="productos/ventas/venta">
+        <ventas>
+            <xsl:for-each select="tienda/productos/ventas/venta">
                 <venta fecha="{@fecha}" id="{@id}" cantidad="{count(productos/producto)}"></venta>
             </xsl:for-each>
         </ventas>
-
-
+        
+        
     </xsl:template>
 </xsl:stylesheet>
